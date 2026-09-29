@@ -4,8 +4,8 @@ namespace BimBlaster.CotasParedes;
 
 public class DimensionTypeItem
 {
-    public required string DisplayName { get; init; }
-    public required Autodesk.Revit.DB.ElementId Id { get; init; }
+    public string DisplayName { get; set; } = "";
+    public Autodesk.Revit.DB.ElementId Id { get; set; } = Autodesk.Revit.DB.ElementId.InvalidElementId;
 }
 
 public partial class CotasParedesWindow : Window

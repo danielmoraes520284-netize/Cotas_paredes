@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <RevitYear Condition="'$(RevitYear)' == ''">2025</RevitYear>
+    <TargetFramework Condition="$(RevitYear) &lt; 2025">net48</TargetFramework>
+    <TargetFramework Condition="$(RevitYear) &gt;= 2025">net8.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -14,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="2025.*" />
-    <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="2025.*" />
+    <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitYear).*" />
+    <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitYear).*" />
   </ItemGroup>
 
   <ItemGroup>

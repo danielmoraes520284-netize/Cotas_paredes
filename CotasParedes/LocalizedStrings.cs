@@ -88,5 +88,5 @@ public static class LocalizedStrings
         Get(LanguageResolver.Resolve(revitLanguage), key);
 
     public static string Get(AppLanguage language, string key) =>
-        Strings[language].GetValueOrDefault(key, Strings[AppLanguage.Portuguese][key]);
+        Strings[language].TryGetValue(key, out var value) ? value : Strings[AppLanguage.Portuguese][key];
 }
