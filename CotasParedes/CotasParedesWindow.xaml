@@ -1,0 +1,54 @@
+<Window x:Class="BimBlaster.CotasParedes.CotasParedesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="640" SizeToContent="Height" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" FontSize="13"
+        Background="{StaticResource WindowBackgroundBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabeçalho -->
+        <Grid Grid.Row="0">
+            <TextBlock x:Name="TitleText" Style="{StaticResource PluginTitleStyle}" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Border Width="34" Height="34" CornerRadius="7" Background="{StaticResource BrandTealBrush}">
+                    <TextBlock Text="B" Foreground="White" FontWeight="Bold" FontSize="20"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" FontSize="20"
+                           Foreground="{StaticResource TextPrimaryBrush}">
+                    <Run Text="BIM" FontWeight="Bold"/><Run Text=" BLASTER" FontWeight="Normal"/>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+        <Border Grid.Row="1" Height="1" Background="{StaticResource BorderLightBrush}" Margin="0,14,0,18"/>
+
+        <!-- Parâmetros -->
+        <Border Grid.Row="2" Style="{StaticResource PanelCardStyle}">
+            <StackPanel>
+                <TextBlock x:Name="DimStyleLabel" Style="{StaticResource FieldLabelStyle}"/>
+                <ComboBox x:Name="StyleCombo" DisplayMemberPath="DisplayName" Height="34"
+                          VerticalContentAlignment="Center" Margin="0,0,0,18"/>
+
+                <TextBlock x:Name="FilterSectionLabel" Style="{StaticResource SectionLabelStyle}"/>
+                <TextBlock x:Name="ParamNameLabel" Style="{StaticResource FieldLabelStyle}"/>
+                <TextBox x:Name="ParamNameBox" Height="34" VerticalContentAlignment="Center" Margin="0,0,0,12"/>
+                <TextBlock x:Name="ParamValueLabel" Style="{StaticResource FieldLabelStyle}"/>
+                <TextBox x:Name="ParamValueBox" Height="34" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Rodapé -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button x:Name="CancelButton" Style="{StaticResource SecondaryButtonStyle}" MinWidth="110"
+                    Margin="0,0,10,0" IsCancel="True" Click="Cancel_Click"/>
+            <Button x:Name="RunButton" Style="{StaticResource PrimaryButtonStyle}" MinWidth="170"
+                    IsDefault="True" Click="Run_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

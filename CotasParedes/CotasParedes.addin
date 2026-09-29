@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>CotasParedes</Name>
+    <Assembly>.\CotasParedes\CotasParedes.dll</Assembly>
+    <AddInId>7d3f5c1e-4a2b-4e9d-9c6a-2b8e1f0a5d47</AddInId>
+    <FullClassName>BimBlaster.CotasParedes.CotasParedesApplication</FullClassName>
+    <VendorId>BIMBLASTER</VendorId>
+    <VendorDescription>BIMBLASTER, www.bimblaster.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
